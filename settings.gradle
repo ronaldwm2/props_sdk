@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My Application"
 include ':app'
-include ':props'
+include ':alienads_propssdk'
