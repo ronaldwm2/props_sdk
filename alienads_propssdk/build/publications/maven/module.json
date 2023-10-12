@@ -1,0 +1,133 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.props.adsmanager",
+    "module": "alienads_propssdk",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "alienads_propssdk-1.0.1.aar",
+          "url": "alienads_propssdk-1.0.1.aar",
+          "size": 13120,
+          "sha512": "17f787bb554d136fe923fce8688424c549f5a37afb4c5506d6beda563c165e7829c239c9cc1b2ade229b2b03ff402b594252d9630cf95cae36a21a75214c0040",
+          "sha256": "3f2b8a6a39131969f693a2322a07b3bbda75a764b2aa168aea20b54fc58d280a",
+          "sha1": "0060dd20cdf4db7612563d6f876f5ebd5f0a6606",
+          "md5": "ffdad9c971ffefb083c6e78506f09451"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.4.1"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.google.android.gms",
+          "module": "play-services-ads",
+          "version": {
+            "requires": "22.4.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "okhttp"
+            }
+          ]
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.9.2"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.9.2"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-gson",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "com.squareup.picasso",
+          "module": "picasso",
+          "version": {
+            "requires": "2.5.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-bom",
+          "version": {
+            "requires": "1.6.0"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        }
+      ],
+      "files": [
+        {
+          "name": "alienads_propssdk-1.0.1.aar",
+          "url": "alienads_propssdk-1.0.1.aar",
+          "size": 13120,
+          "sha512": "17f787bb554d136fe923fce8688424c549f5a37afb4c5506d6beda563c165e7829c239c9cc1b2ade229b2b03ff402b594252d9630cf95cae36a21a75214c0040",
+          "sha256": "3f2b8a6a39131969f693a2322a07b3bbda75a764b2aa168aea20b54fc58d280a",
+          "sha1": "0060dd20cdf4db7612563d6f876f5ebd5f0a6606",
+          "md5": "ffdad9c971ffefb083c6e78506f09451"
+        }
+      ]
+    }
+  ]
+}

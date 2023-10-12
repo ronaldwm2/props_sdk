@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PropsAdsManagement">
+        <attr name="adType" format="string"></attr>
+        <attr name="positionTargeting" format="string"></attr>
+        <attr name="adSize" format="string"></attr>
+    </declare-styleable>
+</resources>

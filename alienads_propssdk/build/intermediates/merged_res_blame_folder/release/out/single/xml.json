@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.props.adsmanager.props-merged_res-36:/xml/image_share_filepaths.xml",
+        "source": "com.props.adsmanager.props-browser-1.4.0-15:/xml/image_share_filepaths.xml"
+    },
+    {
+        "merged": "com.props.adsmanager.props-merged_res-36:/xml/gma_ad_services_config.xml",
+        "source": "com.props.adsmanager.props-play-services-ads-lite-22.4.0-31:/xml/gma_ad_services_config.xml"
+    }
+]
