@@ -4,6 +4,12 @@ pluginManagement {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.ogury.co'
+        }
+        maven {
+            url 'https://android-sdk.is.com/'
+        }
     }
 }
 dependencyResolutionManagement {
@@ -12,6 +18,12 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.ogury.co'
+        }
+        maven {
+            url 'https://android-sdk.is.com/'
+        }
     }
 }
 rootProject.name = "My Application"

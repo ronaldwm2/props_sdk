@@ -8,11 +8,11 @@ version = '1.0.1'
 
 android {
     namespace 'com.props.adsmanager'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -46,6 +46,18 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.6.0"))
+    implementation 'com.mobilefuse.sdk:mobilefuse-adapter-admob:1.7.1.0'
+    implementation 'com.vungle:vungle-ads:7.1.0'
+    implementation 'com.yandex.android:mobileads:5.10.0'
+    implementation 'com.yandex.ads.adapter:admob-mobileads:5.10.0.0'
+    implementation 'com.google.android.gms:play-services-ads:22.1.0'
+
+    implementation 'com.google.ads.mediation:ironsource:7.7.0.1'
+
+    implementation 'com.unity3d.ads:unity-ads:4.9.2'
+    implementation 'com.google.ads.mediation:unity:4.9.2.0'
+    implementation 'co.ogury:ogury-sdk:5.+'
+    implementation 'co.ogury:ogury-mediation-gam:5.+'
 }
 
 afterEvaluate {

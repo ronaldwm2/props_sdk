@@ -60,6 +60,44 @@ public class PropsAdsManagement extends LinearLayout {
         });
     }
 
+    private static void requestSDAdunitData(String apkName, Context context) {
+        API api = PROPS_REST_API.createSDAPI();
+        Call<List<PropsAdsManagementModels>> cb = api.getAdsPosition(apkName);
+
+        cb.enqueue(new Callback<List<PropsAdsManagementModels>>() {
+            @Override
+            public void onResponse(Call<List<PropsAdsManagementModels>> call, Response<List<PropsAdsManagementModels>> response) {
+                if (response.isSuccessful()) {
+                    List<PropsAdsManagementModels> data = response.body();
+
+                    for (PropsAdsManagementModels model : data) {
+                        String pos = "";
+
+                        if (model.type.equals("native")) {
+                            pos = "native_1";
+                        } else if (model.type.equals("interstitial")) {
+                            pos = "interstitial_1";
+                        } else if (model.type.equals("rewarded")) {
+                            pos = "rewarded_1";
+                        } else if (model.type.equals("openapp")) {
+                            pos = "openapp_1";
+                        } else {
+                            pos = "banner_1";
+                        }
+                        SharedPreferences shared_ads_1 = context.getSharedPreferences(pos, Context.MODE_PRIVATE);
+                        PropsAdsManagement.setSharedpref(shared_ads_1, model.adUnitID, model.position);
+                        PropsAdsManagement.adsMapping.put(model.position, model.adUnitID);
+                    }
+                    PropsAdsManagement.isMappingInitialized = true;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PropsAdsManagementModels>> call, Throwable t) {
+
+            }
+        });
+    }
     private static void requestAdunitData(String apkName, Context context) {
         API api = PROPS_REST_API.createAPI();
         Call<List<PropsAdsManagementModels>> cb = api.getAdsPosition(apkName);
@@ -212,6 +250,38 @@ public class PropsAdsManagement extends LinearLayout {
     }
 
 
+    public static void initializeSDAdsMapping(Context context) {
+        SharedPreferences shared_ads_1 = context.getSharedPreferences("banner_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_interstitial_1 = context.getSharedPreferences("interstitial_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_openapp_1 = context.getSharedPreferences("openapp_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_native_1 = context.getSharedPreferences("native_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_rewarded_1 = context.getSharedPreferences("rewarded_1", Context.MODE_PRIVATE);
+
+        String banner_1 = getAdsIdFromPref(shared_ads_1);
+        String interstitial_1 = getAdsIdFromPref(shared_interstitial_1);
+        String openapp_1 = getAdsIdFromPref(shared_openapp_1);
+        String native_1 = getAdsIdFromPref(shared_native_1);
+        String rewarded_1 = getAdsIdFromPref(shared_rewarded_1);
+
+        String alias_banner_1 = getAliasFromPref(shared_ads_1);
+        String alias_interstitial_1 = getAliasFromPref(shared_interstitial_1);
+        String alias_openapp_1 = getAliasFromPref(shared_openapp_1);
+        String alias_native_1 = getAliasFromPref(shared_native_1);
+        String alias_rewarded_1 = getAliasFromPref(shared_rewarded_1);
+
+        PropsAdsManagement.adsMapping.put(alias_banner_1, banner_1);
+        PropsAdsManagement.adsMapping.put(alias_interstitial_1, interstitial_1);
+        PropsAdsManagement.adsMapping.put(alias_openapp_1, openapp_1);
+        PropsAdsManagement.adsMapping.put(alias_native_1, native_1);
+        PropsAdsManagement.adsMapping.put(alias_rewarded_1, rewarded_1);
+
+        PropsAdsManagement.requestSDAdunitData(context.getPackageName(), context);
+
+
+        for(Map.Entry<String, String> entry : adsMapping.entrySet()) {
+            System.out.println("Alienads Key Admap: " + entry.getKey() + " | Ad Unit ID: " + entry.getValue());
+        }
+    }
 
     public static void initializeAdsMapping(Context context) {
         SharedPreferences shared_ads_1 = context.getSharedPreferences("banner_1", Context.MODE_PRIVATE);
