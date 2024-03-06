@@ -5,4 +5,9 @@
         <attr name="positionTargeting" format="string"></attr>
         <attr name="adSize" format="string"></attr>
     </declare-styleable>
+
+    <declare-styleable name="PropsBannerAds">
+        <attr name="adUnitID" format="string"></attr>
+        <attr name="adSize" format="string"></attr>
+    </declare-styleable>
 </resources>
