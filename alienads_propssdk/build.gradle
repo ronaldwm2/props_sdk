@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.props.adsmanager'
-version = '1.0.1'
+version = '1.0.3'
 
 android {
     namespace 'com.props.adsmanager'
@@ -48,8 +48,7 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.6.0"))
     implementation 'com.mobilefuse.sdk:mobilefuse-adapter-admob:1.7.1.0'
     implementation 'com.vungle:vungle-ads:7.1.0'
-    implementation 'com.yandex.android:mobileads:5.10.0'
-    implementation 'com.yandex.ads.adapter:admob-mobileads:5.10.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:6.4.0.0'
     implementation 'com.google.android.gms:play-services-ads:22.1.0'
 
     implementation 'com.google.ads.mediation:ironsource:7.7.0.1'
@@ -66,7 +65,7 @@ afterEvaluate {
             maven(MavenPublication) {
                 groupId = 'com.props.adsmanager'
                 artifactId = 'alienads_propssdk'
-                version = '1.0.1'
+                version = '1.0.3'
                 afterEvaluate {
                     from components.release
                 }
