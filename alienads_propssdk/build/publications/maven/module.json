@@ -131,13 +131,6 @@
           }
         },
         {
-          "group": "com.yandex.android",
-          "module": "mobileads-mediation",
-          "version": {
-            "requires": "6.4.0.0"
-          }
-        },
-        {
           "group": "com.google.android.gms",
           "module": "play-services-ads",
           "version": {

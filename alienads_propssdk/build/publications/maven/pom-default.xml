@@ -92,12 +92,6 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>com.yandex.android</groupId>
-      <artifactId>mobileads-mediation</artifactId>
-      <version>6.4.0.0</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.ads.mediation</groupId>
       <artifactId>ironsource</artifactId>
       <version>7.7.0.1</version>
