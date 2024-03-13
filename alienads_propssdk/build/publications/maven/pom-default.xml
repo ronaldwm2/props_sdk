@@ -79,5 +79,53 @@
       <version>2.5.2</version>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>com.mobilefuse.sdk</groupId>
+      <artifactId>mobilefuse-adapter-admob</artifactId>
+      <version>1.7.1.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.vungle</groupId>
+      <artifactId>vungle-ads</artifactId>
+      <version>7.1.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.yandex.android</groupId>
+      <artifactId>mobileads-mediation</artifactId>
+      <version>6.4.0.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.ads.mediation</groupId>
+      <artifactId>ironsource</artifactId>
+      <version>7.7.0.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.unity3d.ads</groupId>
+      <artifactId>unity-ads</artifactId>
+      <version>4.9.2</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.ads.mediation</groupId>
+      <artifactId>unity</artifactId>
+      <version>4.9.2.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>co.ogury</groupId>
+      <artifactId>ogury-sdk</artifactId>
+      <version>5.+</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>co.ogury</groupId>
+      <artifactId>ogury-mediation-gam</artifactId>
+      <version>5.+</version>
+      <scope>runtime</scope>
+    </dependency>
   </dependencies>
 </project>

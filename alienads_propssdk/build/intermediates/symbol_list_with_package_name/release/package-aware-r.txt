@@ -1,7 +1,11 @@
 com.props.adsmanager
 attr adSize
 attr adType
+attr adUnitID
+attr bannerSize
 attr positionTargeting
 id ads_linearlayout
 layout props_ads_management
+layout propsbanner
 styleable PropsAdsManagement adSize adType positionTargeting
+styleable PropsBannerAds adUnitID bannerSize

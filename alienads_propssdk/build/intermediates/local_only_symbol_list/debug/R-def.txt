@@ -2,7 +2,11 @@ R_DEF: Internal format may change without notice
 local
 attr? adSize
 attr? adType
+attr? adUnitID
+attr? bannerSize
 attr? positionTargeting
 id ads_linearlayout
 layout props_ads_management
+layout propsbanner
 styleable PropsAdsManagement adType positionTargeting adSize
+styleable PropsBannerAds adUnitID bannerSize

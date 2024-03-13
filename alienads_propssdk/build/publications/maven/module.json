@@ -26,11 +26,11 @@
         {
           "name": "alienads_propssdk-1.0.1.aar",
           "url": "alienads_propssdk-1.0.1.aar",
-          "size": 13120,
-          "sha512": "17f787bb554d136fe923fce8688424c549f5a37afb4c5506d6beda563c165e7829c239c9cc1b2ade229b2b03ff402b594252d9630cf95cae36a21a75214c0040",
-          "sha256": "3f2b8a6a39131969f693a2322a07b3bbda75a764b2aa168aea20b54fc58d280a",
-          "sha1": "0060dd20cdf4db7612563d6f876f5ebd5f0a6606",
-          "md5": "ffdad9c971ffefb083c6e78506f09451"
+          "size": 15166,
+          "sha512": "f3ac534af8fad2442c5bf03bec5478834ca919ba0d960ae0fa585a2125ff9d1f2c8d8a7c545c63e33b161e68688bf2566c9049f0beba54b597a19004efc4bb50",
+          "sha256": "c1118055213be8cdf0190911a0c7bfbdcd5f938387dfb5908313279e9ec1506d",
+          "sha1": "68249dfef8387da2af6e4668bca1691457a00554",
+          "md5": "d16b9f8468083af2d5fb5fd4f7dc9b40"
         }
       ]
     },
@@ -115,17 +115,80 @@
             "org.gradle.category": "platform"
           },
           "endorseStrictVersions": true
+        },
+        {
+          "group": "com.mobilefuse.sdk",
+          "module": "mobilefuse-adapter-admob",
+          "version": {
+            "requires": "1.7.1.0"
+          }
+        },
+        {
+          "group": "com.vungle",
+          "module": "vungle-ads",
+          "version": {
+            "requires": "7.1.0"
+          }
+        },
+        {
+          "group": "com.yandex.android",
+          "module": "mobileads-mediation",
+          "version": {
+            "requires": "6.4.0.0"
+          }
+        },
+        {
+          "group": "com.google.android.gms",
+          "module": "play-services-ads",
+          "version": {
+            "requires": "22.1.0"
+          }
+        },
+        {
+          "group": "com.google.ads.mediation",
+          "module": "ironsource",
+          "version": {
+            "requires": "7.7.0.1"
+          }
+        },
+        {
+          "group": "com.unity3d.ads",
+          "module": "unity-ads",
+          "version": {
+            "requires": "4.9.2"
+          }
+        },
+        {
+          "group": "com.google.ads.mediation",
+          "module": "unity",
+          "version": {
+            "requires": "4.9.2.0"
+          }
+        },
+        {
+          "group": "co.ogury",
+          "module": "ogury-sdk",
+          "version": {
+            "requires": "5.+"
+          }
+        },
+        {
+          "group": "co.ogury",
+          "module": "ogury-mediation-gam",
+          "version": {
+            "requires": "5.+"
+          }
         }
       ],
       "files": [
         {
           "name": "alienads_propssdk-1.0.1.aar",
           "url": "alienads_propssdk-1.0.1.aar",
-          "size": 13120,
-          "sha512": "17f787bb554d136fe923fce8688424c549f5a37afb4c5506d6beda563c165e7829c239c9cc1b2ade229b2b03ff402b594252d9630cf95cae36a21a75214c0040",
-          "sha256": "3f2b8a6a39131969f693a2322a07b3bbda75a764b2aa168aea20b54fc58d280a",
-          "sha1": "0060dd20cdf4db7612563d6f876f5ebd5f0a6606",
-          "md5": "ffdad9c971ffefb083c6e78506f09451"
+          "size": 15166,
+          "sha512": "f3ac534af8fad2442c5bf03bec5478834ca919ba0d960ae0fa585a2125ff9d1f2c8d8a7c545c63e33b161e68688bf2566c9049f0beba54b597a19004efc4bb50",
+          "sha256": "c1118055213be8cdf0190911a0c7bfbdcd5f938387dfb5908313279e9ec1506d",
+          "sha1": "68249dfef8387da2af6e4668bca1691457a00554",
+          "md5": "d16b9f8468083af2d5fb5fd4f7dc9b40"
         }
       ]
     }

@@ -56,7 +56,7 @@ public class PropsBannerAds extends LinearLayout {
 
         try {
             this.code = ta.getString(R.styleable.PropsBannerAds_adUnitID);
-            this.size = ta.getString(R.styleable.PropsAdsManagement_adSize);
+            this.size = ta.getString(R.styleable.PropsBannerAds_bannerSize);
 
             setOrientation(LinearLayout.HORIZONTAL);
 

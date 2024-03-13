@@ -8,6 +8,6 @@
 
     <declare-styleable name="PropsBannerAds">
         <attr name="adUnitID" format="string"></attr>
-        <attr name="adSize" format="string"></attr>
+        <attr name="bannerSize" format="string"></attr>
     </declare-styleable>
 </resources>
