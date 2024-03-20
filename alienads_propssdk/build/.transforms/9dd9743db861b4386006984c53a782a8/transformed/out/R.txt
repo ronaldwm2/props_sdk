@@ -1,9 +1,0 @@
-int attr adSize 0x0
-int attr adType 0x0
-int attr positionTargeting 0x0
-int id ads_linearlayout 0x0
-int layout props_ads_management 0x0
-int[] styleable PropsAdsManagement { 0x0, 0x0, 0x0 }
-int styleable PropsAdsManagement_adSize 0
-int styleable PropsAdsManagement_adType 1
-int styleable PropsAdsManagement_positionTargeting 2

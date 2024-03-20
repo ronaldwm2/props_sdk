@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<incidents format="6" by="lint 7.3.0" type="partial_results">
-    <map id="UnusedResources">
-        <entry
-            name="model"
-            string="attr[positionTargeting(D),adSize(D),adType(D)],id[ads_linearlayout(U)],layout[props_ads_management(U)],styleable[PropsAdsManagement(U),PropsAdsManagement_adSize(R),PropsAdsManagement_positionTargeting(R)];;;;"/>
-    </map>
-
-</incidents>
