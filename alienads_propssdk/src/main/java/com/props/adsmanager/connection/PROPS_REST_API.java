@@ -16,7 +16,7 @@ public class PROPS_REST_API {
         builder.connectTimeout(10, TimeUnit.SECONDS);
         builder.writeTimeout(10, TimeUnit.SECONDS);
         builder.readTimeout(30, TimeUnit.SECONDS);
-        builder.addInterceptor(logging);
+//        builder.addInterceptor(logging);
         builder.cache(null);
         OkHttpClient okHttpClient = builder.build();
 

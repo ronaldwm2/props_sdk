@@ -135,7 +135,7 @@ public class PropsAdsManagement extends LinearLayout {
                     PropsAdsManagement.isMappingInitialized = true;
 
                     for(Map.Entry<String, String> entry : adsMapping.entrySet()) {
-                        System.out.println("PropsSdk Key Admap: " + entry.getKey() + " | Ad Unit ID: " + entry.getValue());
+                        System.out.println("PropsSdk Key Admap: " + entry.getKey());
                     }
                 }
             }
