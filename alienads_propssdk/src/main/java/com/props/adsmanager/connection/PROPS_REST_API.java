@@ -1,7 +1,5 @@
 package com.props.adsmanager.connection;
 
-import com.props.adsmanager.BuildConfig;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -18,9 +16,7 @@ public class PROPS_REST_API {
         builder.connectTimeout(10, TimeUnit.SECONDS);
         builder.writeTimeout(10, TimeUnit.SECONDS);
         builder.readTimeout(30, TimeUnit.SECONDS);
-        if (BuildConfig.DEBUG) {
-            builder.addInterceptor(logging);
-        }
+        builder.addInterceptor(logging);
         builder.cache(null);
         OkHttpClient okHttpClient = builder.build();
 

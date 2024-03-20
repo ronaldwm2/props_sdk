@@ -138,7 +138,8 @@ public class PropsAdsManagement extends LinearLayout {
 
             @Override
             public void onFailure(Call<List<PropsAdsManagementModels>> call, Throwable t) {
-
+                Log.d("PropsSDK", "Failed to retrieve data from props server!");
+                Log.d("Reason", t.getMessage());
             }
         });
     }
