@@ -266,24 +266,28 @@ public class PropsAdsManagement extends LinearLayout {
         SharedPreferences shared_openapp_1 = context.getSharedPreferences("openapp_1", Context.MODE_PRIVATE);
         SharedPreferences shared_native_1 = context.getSharedPreferences("native_1", Context.MODE_PRIVATE);
         SharedPreferences shared_rewarded_1 = context.getSharedPreferences("rewarded_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_testing = context.getSharedPreferences("testing", Context.MODE_PRIVATE);
 
         String banner_1 = getAdsIdFromPref(shared_ads_1);
         String interstitial_1 = getAdsIdFromPref(shared_interstitial_1);
         String openapp_1 = getAdsIdFromPref(shared_openapp_1);
         String native_1 = getAdsIdFromPref(shared_native_1);
         String rewarded_1 = getAdsIdFromPref(shared_rewarded_1);
+        String testing = getAdsIdFromPref(shared_testing);
 
         String alias_banner_1 = getAliasFromPref(shared_ads_1);
         String alias_interstitial_1 = getAliasFromPref(shared_interstitial_1);
         String alias_openapp_1 = getAliasFromPref(shared_openapp_1);
         String alias_native_1 = getAliasFromPref(shared_native_1);
         String alias_rewarded_1 = getAliasFromPref(shared_rewarded_1);
+        String alias_testing = getAliasFromPref(shared_testing);
 
         PropsAdsManagement.adsMapping.put(alias_banner_1, banner_1);
         PropsAdsManagement.adsMapping.put(alias_interstitial_1, interstitial_1);
         PropsAdsManagement.adsMapping.put(alias_openapp_1, openapp_1);
         PropsAdsManagement.adsMapping.put(alias_native_1, native_1);
         PropsAdsManagement.adsMapping.put(alias_rewarded_1, rewarded_1);
+        PropsAdsManagement.adsMapping.put(alias_testing, testing);
 
         PropsAdsManagement.requestAdunitData(context.getPackageName(), context);
 
