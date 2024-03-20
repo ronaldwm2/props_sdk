@@ -15,9 +15,8 @@ public class PropsBannerAds extends LinearLayout {
     public String code;
     public String size;
     public AdView adView;
-    public Context context;
 
-    public AdView createBannerAdview(String sizes, String mapping) {
+    public AdView createBannerAdview(String sizes, String mapping, Context context) {
         AdSize adSize = null;
 
         if (sizes.equals("BANNER")) {
@@ -34,7 +33,7 @@ public class PropsBannerAds extends LinearLayout {
             adSize = AdSize.BANNER;
         }
 
-        adView = new AdView(this.context);
+        adView = new AdView(context);
         String getMapping = PropsAdsManagement.adsMapping.get(mapping);
         if (getMapping == null) {
             getMapping = this.code;
@@ -63,7 +62,7 @@ public class PropsBannerAds extends LinearLayout {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             inflater.inflate(R.layout.propsbanner, this, true);
 
-            AdView adview = this.createBannerAdview(this.size, this.code);
+            AdView adview = this.createBannerAdview(this.size, this.code, context);
 
             this.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
