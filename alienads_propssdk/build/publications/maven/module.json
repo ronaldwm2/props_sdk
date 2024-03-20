@@ -26,11 +26,11 @@
         {
           "name": "alienads_propssdk-1.0.2.aar",
           "url": "alienads_propssdk-1.0.2.aar",
-          "size": 16359,
-          "sha512": "8c1713f707866fe7e701542e3f5d516ca87fff668f1bfb4cb8c26db29ac50512e6580e4a6a3023149affeb5477a30602c220b92b0a1dfecc155963bd07e01da4",
-          "sha256": "5ab4a5f31959056e103683d680f66921da27942412efa0637b2111c5e7dfd33b",
-          "sha1": "82df67dbb093bdc32562640aa396770ad7e64d0e",
-          "md5": "d7ffa1959f42bb3c99d6701db34717da"
+          "size": 16502,
+          "sha512": "3311ce189551437c499a7479950936315280975c219f5469351b749320c4769f66225a7f9371888bd3d02d4a45a32a177e3454e50ff2622f26000bcbbb5298f2",
+          "sha256": "93cb15ee2169d4078aba21ead15a2cd97a8ae00b7a84e423feb03700fdbf41c8",
+          "sha1": "10eddc4a34882fb066e113eb81178b030235b963",
+          "md5": "1ec6ec2b06f0129d24f7f0106b068d1d"
         }
       ]
     },
@@ -205,11 +205,11 @@
         {
           "name": "alienads_propssdk-1.0.2.aar",
           "url": "alienads_propssdk-1.0.2.aar",
-          "size": 16359,
-          "sha512": "8c1713f707866fe7e701542e3f5d516ca87fff668f1bfb4cb8c26db29ac50512e6580e4a6a3023149affeb5477a30602c220b92b0a1dfecc155963bd07e01da4",
-          "sha256": "5ab4a5f31959056e103683d680f66921da27942412efa0637b2111c5e7dfd33b",
-          "sha1": "82df67dbb093bdc32562640aa396770ad7e64d0e",
-          "md5": "d7ffa1959f42bb3c99d6701db34717da"
+          "size": 16502,
+          "sha512": "3311ce189551437c499a7479950936315280975c219f5469351b749320c4769f66225a7f9371888bd3d02d4a45a32a177e3454e50ff2622f26000bcbbb5298f2",
+          "sha256": "93cb15ee2169d4078aba21ead15a2cd97a8ae00b7a84e423feb03700fdbf41c8",
+          "sha1": "10eddc4a34882fb066e113eb81178b030235b963",
+          "md5": "1ec6ec2b06f0129d24f7f0106b068d1d"
         }
       ]
     }

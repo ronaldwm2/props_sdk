@@ -33,6 +33,8 @@ public class PropsBannerAds extends LinearLayout {
             adSize = AdSize.BANNER;
         }
 
+        AdRequest adrequest = new AdRequest.Builder().build();
+
         adView = new AdView(context);
         String getMapping = PropsAdsManagement.adsMapping.get(mapping);
         if (getMapping == null) {
@@ -41,6 +43,7 @@ public class PropsBannerAds extends LinearLayout {
         adView.setAdSize(adSize);
         adView.setAdUnitId(getMapping);
         adView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        adView.loadAd(adrequest);
         return adView;
     }
 
