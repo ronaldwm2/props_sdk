@@ -162,14 +162,14 @@
           "group": "co.ogury",
           "module": "ogury-sdk",
           "version": {
-            "requires": "5.+"
+            "requires": "5.6.2"
           }
         },
         {
           "group": "co.ogury",
           "module": "ogury-mediation-gam",
           "version": {
-            "requires": "5.+"
+            "requires": "5.6.2.0"
           }
         },
         {
@@ -184,6 +184,20 @@
           "module": "user-messaging-platform",
           "version": {
             "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "com.startapp",
+          "module": "inapp-sdk",
+          "version": {
+            "requires": "4.+"
+          }
+        },
+        {
+          "group": "com.startapp",
+          "module": "admob-mediation",
+          "version": {
+            "requires": "2.+"
           }
         }
       ],
