@@ -3,7 +3,7 @@
   "component": {
     "group": "com.props.adsmanager",
     "module": "alienads_propssdk",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -24,13 +24,13 @@
       },
       "files": [
         {
-          "name": "alienads_propssdk-1.0.1.aar",
-          "url": "alienads_propssdk-1.0.1.aar",
-          "size": 15164,
-          "sha512": "84899cb038bc2667d68b504c7383adf7e46289c734cf7ffc678e06cb1f766a7e9b1620f67afe63b7916f44148f13657a81456c9f3560849b6757c90df990e859",
-          "sha256": "cfc1fc46784ebfd9350a7d93f89784adab1f88561eea5b0c304120cd73e224f6",
-          "sha1": "b2dbfcf92210e433a5fca80d84c7ca0f6aca6bac",
-          "md5": "b218fd5cb0301dd1f5c97a70fbe10a4b"
+          "name": "alienads_propssdk-1.0.2.aar",
+          "url": "alienads_propssdk-1.0.2.aar",
+          "size": 16327,
+          "sha512": "d8cee366872e29e250213a9e63edc732612ee18baeece0cee0b55b1c50b40879f464a98da8715c1a028d03afa9cbe991b7a90d66dca08ada44d7b9f02ad6b092",
+          "sha256": "e4bdf65c9cb20b39a30a68a4e645c6de7978fe55ee45a95a15618f4a94e33fe6",
+          "sha1": "135766079d6775068adbbc82aa58b6070ba3c186",
+          "md5": "fbac41227285ae1b34e0ac85a0b492b4"
         }
       ]
     },
@@ -171,17 +171,31 @@
           "version": {
             "requires": "5.+"
           }
+        },
+        {
+          "group": "com.google.ads.mediation",
+          "module": "pangle",
+          "version": {
+            "requires": "5.8.0.7.0"
+          }
+        },
+        {
+          "group": "com.google.android.ump",
+          "module": "user-messaging-platform",
+          "version": {
+            "requires": "2.2.0"
+          }
         }
       ],
       "files": [
         {
-          "name": "alienads_propssdk-1.0.1.aar",
-          "url": "alienads_propssdk-1.0.1.aar",
-          "size": 15164,
-          "sha512": "84899cb038bc2667d68b504c7383adf7e46289c734cf7ffc678e06cb1f766a7e9b1620f67afe63b7916f44148f13657a81456c9f3560849b6757c90df990e859",
-          "sha256": "cfc1fc46784ebfd9350a7d93f89784adab1f88561eea5b0c304120cd73e224f6",
-          "sha1": "b2dbfcf92210e433a5fca80d84c7ca0f6aca6bac",
-          "md5": "b218fd5cb0301dd1f5c97a70fbe10a4b"
+          "name": "alienads_propssdk-1.0.2.aar",
+          "url": "alienads_propssdk-1.0.2.aar",
+          "size": 16327,
+          "sha512": "d8cee366872e29e250213a9e63edc732612ee18baeece0cee0b55b1c50b40879f464a98da8715c1a028d03afa9cbe991b7a90d66dca08ada44d7b9f02ad6b092",
+          "sha256": "e4bdf65c9cb20b39a30a68a4e645c6de7978fe55ee45a95a15618f4a94e33fe6",
+          "sha1": "135766079d6775068adbbc82aa58b6070ba3c186",
+          "md5": "fbac41227285ae1b34e0ac85a0b492b4"
         }
       ]
     }

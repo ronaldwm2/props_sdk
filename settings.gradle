@@ -10,6 +10,11 @@ pluginManagement {
         maven {
             url 'https://android-sdk.is.com/'
         }
+        repositories {
+            maven {
+                url 'https://artifact.bytedance.com/repository/pangle/'
+            }
+        }
     }
 }
 dependencyResolutionManagement {
@@ -23,6 +28,11 @@ dependencyResolutionManagement {
         }
         maven {
             url 'https://android-sdk.is.com/'
+        }
+        repositories {
+            maven {
+                url 'https://artifact.bytedance.com/repository/pangle/'
+            }
         }
     }
 }

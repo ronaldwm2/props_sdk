@@ -65,6 +65,8 @@ public class PropsBannerAds extends LinearLayout {
 
             AdView adview = this.createBannerAdview(this.size, this.code);
 
+            this.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+
             this.addView(adview);
         } finally {
             ta.recycle();

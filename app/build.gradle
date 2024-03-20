@@ -34,9 +34,23 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.work:work-runtime:2.7.1'
-    implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.android.gms:play-services-ads:22.4.0'
+    implementation('com.squareup.retrofit2:retrofit:2.9.0') {
+        exclude module: 'okhttp'
+    }
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.6.0"))
+    implementation 'com.mobilefuse.sdk:mobilefuse-adapter-admob:1.7.1.0'
+    implementation 'com.vungle:vungle-ads:7.1.0'
     implementation 'com.google.android.gms:play-services-ads:22.1.0'
+    implementation 'com.google.ads.mediation:ironsource:7.7.0.1'
+    implementation 'com.unity3d.ads:unity-ads:4.9.2'
+    implementation 'com.google.ads.mediation:unity:4.9.2.0'
+    implementation 'co.ogury:ogury-sdk:5.+'
+    implementation 'co.ogury:ogury-mediation-gam:5.+'
+    implementation("com.google.ads.mediation:pangle:5.8.0.7.0")
 }

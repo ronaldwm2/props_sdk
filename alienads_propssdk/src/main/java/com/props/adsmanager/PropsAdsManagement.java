@@ -28,6 +28,10 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.ump.ConsentForm;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.UserMessagingPlatform;
 import com.props.adsmanager.Models.PropsAdsManagementModels;
 import com.props.adsmanager.connection.API;
 import com.props.adsmanager.connection.PROPS_REST_API;
@@ -51,6 +55,7 @@ public class PropsAdsManagement extends LinearLayout {
     public static InterstitialAd mInterstitialAd;
     public static RewardedAd mRewardedAd;
     private static boolean isMappingInitialized = false;
+    private ConsentInformation consentInformation;
 
     public static void initializeAdmob(Context context) {
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
@@ -58,6 +63,43 @@ public class PropsAdsManagement extends LinearLayout {
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
             }
         });
+    }
+
+    private void createConsent(Activity activity) {
+        consentInformation = UserMessagingPlatform.getConsentInformation(context);
+        ConsentRequestParameters params = new ConsentRequestParameters
+                .Builder()
+                .build();
+        consentInformation.requestConsentInfoUpdate(
+                activity,
+                params,
+                (ConsentInformation.OnConsentInfoUpdateSuccessListener) () -> {
+                    UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                            activity,
+                            (ConsentForm.OnConsentFormDismissedListener) loadAndShowError -> {
+                                if (loadAndShowError != null) {
+                                    // Consent gathering failed.
+                                    Log.w(TAG, String.format("%s: %s",
+                                            loadAndShowError.getErrorCode(),
+                                            loadAndShowError.getMessage()));
+                                }
+
+                                // Consent has been gathered.
+                                if (consentInformation.canRequestAds()) {
+                                    initializeAdmob(context);
+                                }
+                            }
+                    );
+                },
+                (ConsentInformation.OnConsentInfoUpdateFailureListener) requestConsentError -> {
+                    // Consent gathering failed.
+                    Log.w(TAG, String.format("%s: %s",
+                            requestConsentError.getErrorCode(),
+                            requestConsentError.getMessage()));
+        });
+        if (consentInformation.canRequestAds()) {
+            initializeAdmob(context);
+        }
     }
 
     private static void requestAdunitData(String apkName, Context context) {
@@ -81,8 +123,10 @@ public class PropsAdsManagement extends LinearLayout {
                             pos = "rewarded_1";
                         } else if (model.type.equals("openapp")) {
                             pos = "openapp_1";
-                        } else {
+                        } else if (model.type.equals("banner")){
                             pos = "banner_1";
+                        } else {
+                            pos = "testing";
                         }
                         SharedPreferences shared_ads_1 = context.getSharedPreferences(pos, Context.MODE_PRIVATE);
                         PropsAdsManagement.setSharedpref(shared_ads_1, model.adUnitID, model.position);

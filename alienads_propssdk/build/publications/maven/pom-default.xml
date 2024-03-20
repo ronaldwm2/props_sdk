@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.props.adsmanager</groupId>
   <artifactId>alienads_propssdk</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <packaging>aar</packaging>
   <name>alienads_propssdk</name>
   <description>Props Aliendroid Adsmanager</description>
@@ -119,6 +119,18 @@
       <groupId>co.ogury</groupId>
       <artifactId>ogury-mediation-gam</artifactId>
       <version>5.+</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.ads.mediation</groupId>
+      <artifactId>pangle</artifactId>
+      <version>5.8.0.7.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.android.ump</groupId>
+      <artifactId>user-messaging-platform</artifactId>
+      <version>2.2.0</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
