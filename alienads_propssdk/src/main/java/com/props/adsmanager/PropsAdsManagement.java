@@ -133,6 +133,10 @@ public class PropsAdsManagement extends LinearLayout {
                         PropsAdsManagement.adsMapping.put(model.position, model.adUnitID);
                     }
                     PropsAdsManagement.isMappingInitialized = true;
+
+                    for(Map.Entry<String, String> entry : adsMapping.entrySet()) {
+                        System.out.println("PropsSdk Key Admap: " + entry.getKey() + " | Ad Unit ID: " + entry.getValue());
+                    }
                 }
             }
 
@@ -283,10 +287,6 @@ public class PropsAdsManagement extends LinearLayout {
 
         PropsAdsManagement.requestAdunitData(context.getPackageName(), context);
 
-
-        for(Map.Entry<String, String> entry : adsMapping.entrySet()) {
-            System.out.println("Alienads Key Admap: " + entry.getKey() + " | Ad Unit ID: " + entry.getValue());
-        }
     }
 
     public PropsAdsManagement(Context context) {
