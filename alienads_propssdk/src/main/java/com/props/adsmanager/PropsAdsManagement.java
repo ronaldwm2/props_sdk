@@ -371,7 +371,7 @@ public class PropsAdsManagement extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        inflater.inflate(R.layout.props_ads_management, this);
+        inflater.inflate(R.layout.props_ads_management, this, false);
 
         this.ads_linearlayout = findViewById(R.id.ads_linearlayout);
 
