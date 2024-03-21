@@ -3,7 +3,7 @@
   "component": {
     "group": "com.props.adsmanager",
     "module": "alienads_propssdk",
-    "version": "1.0.2",
+    "version": "1.0.5.2",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -24,13 +24,13 @@
       },
       "files": [
         {
-          "name": "alienads_propssdk-1.0.2.aar",
-          "url": "alienads_propssdk-1.0.2.aar",
-          "size": 19619,
-          "sha512": "5fd3b2f30a130aac9a9014c03f29e258ffff6f0f9b47a111333bad639be4c7384e2ec0113789b956bae8e7ba3affc86164b2f3e7e261542711dfd999fba4c29c",
-          "sha256": "9033056572a763eeb481a9e38fb749c77025f3fc6bf68517e48dcbd91be4f8c0",
-          "sha1": "2209478cfb914701889dde84ee82daeb8968928f",
-          "md5": "a106341fb3ff67ba25f3f1b5ad1bf7d7"
+          "name": "alienads_propssdk-1.0.5.2.aar",
+          "url": "alienads_propssdk-1.0.5.2.aar",
+          "size": 20061,
+          "sha512": "e6ea1e06b63ca825f6fef8c2e4075f0c7290459fcb1bf9b505ac1dfec15e285f7282c8b02bd274d9380b509b38c8cf8645bd63ee396d57e421b8e27baf0a3bbf",
+          "sha256": "d8cb16405da23a8ede59e561de6855d78636ea876d6c43885ee5e55d30a13b8b",
+          "sha1": "6ceb1ec57c83fb7df8329e190dd05546c020466f",
+          "md5": "ce81913ab366e953e6ce2df08f43c2c2"
         }
       ]
     },
@@ -203,13 +203,13 @@
       ],
       "files": [
         {
-          "name": "alienads_propssdk-1.0.2.aar",
-          "url": "alienads_propssdk-1.0.2.aar",
-          "size": 19619,
-          "sha512": "5fd3b2f30a130aac9a9014c03f29e258ffff6f0f9b47a111333bad639be4c7384e2ec0113789b956bae8e7ba3affc86164b2f3e7e261542711dfd999fba4c29c",
-          "sha256": "9033056572a763eeb481a9e38fb749c77025f3fc6bf68517e48dcbd91be4f8c0",
-          "sha1": "2209478cfb914701889dde84ee82daeb8968928f",
-          "md5": "a106341fb3ff67ba25f3f1b5ad1bf7d7"
+          "name": "alienads_propssdk-1.0.5.2.aar",
+          "url": "alienads_propssdk-1.0.5.2.aar",
+          "size": 20061,
+          "sha512": "e6ea1e06b63ca825f6fef8c2e4075f0c7290459fcb1bf9b505ac1dfec15e285f7282c8b02bd274d9380b509b38c8cf8645bd63ee396d57e421b8e27baf0a3bbf",
+          "sha256": "d8cb16405da23a8ede59e561de6855d78636ea876d6c43885ee5e55d30a13b8b",
+          "sha1": "6ceb1ec57c83fb7df8329e190dd05546c020466f",
+          "md5": "ce81913ab366e953e6ce2df08f43c2c2"
         }
       ]
     }

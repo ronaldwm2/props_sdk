@@ -41,6 +41,7 @@ import com.ogury.ed.OguryBannerAdView;
 import com.ogury.ed.OguryInterstitialAd;
 import com.ogury.ed.OguryInterstitialAdListener;
 import com.ogury.sdk.Ogury;
+import com.ogury.sdk.OguryConfiguration;
 import com.props.adsmanager.Models.PropsAdsManagementModels;
 import com.props.adsmanager.connection.API;
 import com.props.adsmanager.connection.PROPS_REST_API;
@@ -141,10 +142,14 @@ public class PropsAdsManagement extends LinearLayout {
                             pos = "banner_1";
                         } else if (model.type.equals("testing")){
                             pos = "testing";
-                        } else  if (model.type.equals("ogury_banner")){
+                        } else if (model.type.equals("ogury_banner")){
                             pos = "ogury_banner_1";
-                        } else  if (model.type.equals("ogury_interstitial")){
+                        } else if (model.type.equals("ogury_interstitial")){
                             pos = "ogury_interstitial_1";
+                        } else if (model.type.equals("ogury_code")){
+                            pos = "ogury_code";
+                            OguryConfiguration.Builder oguryConfigurationBuilder = new OguryConfiguration.Builder(context, model.adUnitID);
+                            Ogury.start(oguryConfigurationBuilder.build());
                         }
                         SharedPreferences shared_ads_1 = context.getSharedPreferences(pos, Context.MODE_PRIVATE);
                         PropsAdsManagement.setSharedpref(shared_ads_1, model.adUnitID, model.position);
@@ -299,6 +304,7 @@ public class PropsAdsManagement extends LinearLayout {
         SharedPreferences shared_testing = context.getSharedPreferences("testing", Context.MODE_PRIVATE);
         SharedPreferences shared_ogury_banner_1 = context.getSharedPreferences("ogury_banner_1", Context.MODE_PRIVATE);
         SharedPreferences shared_ogury_interstitial_1 = context.getSharedPreferences("ogury_interstitial_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_ogury_code = context.getSharedPreferences("ogury_code", Context.MODE_PRIVATE);
 
         String banner_1 = getAdsIdFromPref(shared_ads_1);
         String interstitial_1 = getAdsIdFromPref(shared_interstitial_1);
@@ -308,6 +314,7 @@ public class PropsAdsManagement extends LinearLayout {
         String testing = getAdsIdFromPref(shared_testing);
         String ogury_banner_1 = getAdsIdFromPref(shared_ogury_banner_1);
         String ogury_interstitial_1 = getAdsIdFromPref(shared_ogury_interstitial_1);
+        String ogury_shared_code = getAdsIdFromPref(shared_ogury_code);
 
         String alias_banner_1 = getAliasFromPref(shared_ads_1);
         String alias_interstitial_1 = getAliasFromPref(shared_interstitial_1);
@@ -317,6 +324,7 @@ public class PropsAdsManagement extends LinearLayout {
         String alias_testing = getAliasFromPref(shared_testing);
         String alias_ogury_banner_1 = getAdsIdFromPref(shared_ogury_banner_1);
         String alias_ogury_interstitial_1 = getAdsIdFromPref(shared_ogury_interstitial_1);
+        String alias_ogury_shared_code = getAdsIdFromPref(shared_ogury_code);
 
         PropsAdsManagement.adsMapping.put(alias_banner_1, banner_1);
         PropsAdsManagement.adsMapping.put(alias_interstitial_1, interstitial_1);
@@ -326,6 +334,12 @@ public class PropsAdsManagement extends LinearLayout {
         PropsAdsManagement.adsMapping.put(alias_testing, testing);
         PropsAdsManagement.adsMapping.put(alias_ogury_banner_1, ogury_banner_1);
         PropsAdsManagement.adsMapping.put(alias_ogury_interstitial_1, ogury_interstitial_1);
+        PropsAdsManagement.adsMapping.put(alias_ogury_shared_code, ogury_shared_code);
+
+        if (ogury_shared_code != null || !ogury_shared_code.equals("")) {
+            OguryConfiguration.Builder oguryConfigurationBuilder = new OguryConfiguration.Builder(context, ogury_shared_code);
+            Ogury.start(oguryConfigurationBuilder.build());
+        }
 
         PropsAdsManagement.requestAdunitData(context.getPackageName(), context);
 
