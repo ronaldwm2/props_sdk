@@ -371,9 +371,9 @@ public class PropsAdsManagement extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        inflater.inflate(R.layout.props_ads_management, this, false);
+        this.ads_linearlayout = (LinearLayout) inflater.inflate(R.layout.props_ads_management, this, false);
 
-        this.ads_linearlayout = findViewById(R.id.ads_linearlayout);
+        this.ads_linearlayout = this.ads_linearlayout.findViewById(R.id.ads_linearlayout);
 
     }
 
@@ -430,6 +430,13 @@ public class PropsAdsManagement extends LinearLayout {
         adView.setAdSize(adSize);
         adView.setAdUnitId(getMapping);
         adView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        if (this.ads_linearlayout == null) {
+            LayoutInflater inflater = (LayoutInflater)
+                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            this.ads_linearlayout = (LinearLayout) inflater.inflate(R.layout.props_ads_management, this, false);
+
+            this.ads_linearlayout = this.ads_linearlayout.findViewById(R.id.ads_linearlayout);
+        }
         this.ads_linearlayout.addView(adView);
 
         AdRequest adrequest = new AdRequest.Builder().build();
