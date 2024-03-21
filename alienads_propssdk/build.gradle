@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.props.adsmanager'
-version = '1.0.3'
+version = '1.0.5.2'
 
 android {
     namespace 'com.props.adsmanager'
@@ -63,7 +63,7 @@ afterEvaluate {
             maven(MavenPublication) {
                 groupId = 'com.props.adsmanager'
                 artifactId = 'alienads_propssdk'
-                version = '1.0.4'
+                version = '1.0.5.2'
                 afterEvaluate {
                     from components.release
                 }
