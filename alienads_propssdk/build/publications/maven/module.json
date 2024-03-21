@@ -3,7 +3,7 @@
   "component": {
     "group": "com.props.adsmanager",
     "module": "alienads_propssdk",
-    "version": "1.0.5.2",
+    "version": "1.0.6.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -24,8 +24,8 @@
       },
       "files": [
         {
-          "name": "alienads_propssdk-1.0.5.2.aar",
-          "url": "alienads_propssdk-1.0.5.2.aar",
+          "name": "alienads_propssdk-1.0.6.1.aar",
+          "url": "alienads_propssdk-1.0.6.1.aar",
           "size": 20061,
           "sha512": "e6ea1e06b63ca825f6fef8c2e4075f0c7290459fcb1bf9b505ac1dfec15e285f7282c8b02bd274d9380b509b38c8cf8645bd63ee396d57e421b8e27baf0a3bbf",
           "sha256": "d8cb16405da23a8ede59e561de6855d78636ea876d6c43885ee5e55d30a13b8b",
@@ -203,8 +203,8 @@
       ],
       "files": [
         {
-          "name": "alienads_propssdk-1.0.5.2.aar",
-          "url": "alienads_propssdk-1.0.5.2.aar",
+          "name": "alienads_propssdk-1.0.6.1.aar",
+          "url": "alienads_propssdk-1.0.6.1.aar",
           "size": 20061,
           "sha512": "e6ea1e06b63ca825f6fef8c2e4075f0c7290459fcb1bf9b505ac1dfec15e285f7282c8b02bd274d9380b509b38c8cf8645bd63ee396d57e421b8e27baf0a3bbf",
           "sha256": "d8cb16405da23a8ede59e561de6855d78636ea876d6c43885ee5e55d30a13b8b",

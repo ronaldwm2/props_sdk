@@ -63,14 +63,14 @@ afterEvaluate {
             maven(MavenPublication) {
                 groupId = 'com.props.adsmanager'
                 artifactId = 'alienads_propssdk'
-                version = '1.0.5.2'
+                version = '1.0.6.1'
                 afterEvaluate {
                     from components.release
                 }
                 pom {
                     name = 'alienads_propssdk'
                     description = 'Props Aliendroid Adsmanager'
-                    version = '1.0.5.2'
+                    version = '1.0.6.1'
                     groupId = 'com.props.adsmanager'
                 }
 //
