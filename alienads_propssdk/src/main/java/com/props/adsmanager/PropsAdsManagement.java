@@ -139,8 +139,12 @@ public class PropsAdsManagement extends LinearLayout {
                             pos = "openapp_1";
                         } else if (model.type.equals("banner")){
                             pos = "banner_1";
-                        } else {
+                        } else if (model.type.equals("testing")){
                             pos = "testing";
+                        } else  if (model.type.equals("ogury_banner")){
+                            pos = "ogury_banner_1";
+                        } else  if (model.type.equals("ogury_interstitial")){
+                            pos = "ogury_interstitial_1";
                         }
                         SharedPreferences shared_ads_1 = context.getSharedPreferences(pos, Context.MODE_PRIVATE);
                         PropsAdsManagement.setSharedpref(shared_ads_1, model.adUnitID, model.position);
@@ -293,6 +297,8 @@ public class PropsAdsManagement extends LinearLayout {
         SharedPreferences shared_native_1 = context.getSharedPreferences("native_1", Context.MODE_PRIVATE);
         SharedPreferences shared_rewarded_1 = context.getSharedPreferences("rewarded_1", Context.MODE_PRIVATE);
         SharedPreferences shared_testing = context.getSharedPreferences("testing", Context.MODE_PRIVATE);
+        SharedPreferences shared_ogury_banner_1 = context.getSharedPreferences("ogury_banner_1", Context.MODE_PRIVATE);
+        SharedPreferences shared_ogury_interstitial_1 = context.getSharedPreferences("ogury_interstitial_1", Context.MODE_PRIVATE);
 
         String banner_1 = getAdsIdFromPref(shared_ads_1);
         String interstitial_1 = getAdsIdFromPref(shared_interstitial_1);
@@ -300,6 +306,8 @@ public class PropsAdsManagement extends LinearLayout {
         String native_1 = getAdsIdFromPref(shared_native_1);
         String rewarded_1 = getAdsIdFromPref(shared_rewarded_1);
         String testing = getAdsIdFromPref(shared_testing);
+        String ogury_banner_1 = getAdsIdFromPref(shared_ogury_banner_1);
+        String ogury_interstitial_1 = getAdsIdFromPref(shared_ogury_interstitial_1);
 
         String alias_banner_1 = getAliasFromPref(shared_ads_1);
         String alias_interstitial_1 = getAliasFromPref(shared_interstitial_1);
@@ -307,6 +315,8 @@ public class PropsAdsManagement extends LinearLayout {
         String alias_native_1 = getAliasFromPref(shared_native_1);
         String alias_rewarded_1 = getAliasFromPref(shared_rewarded_1);
         String alias_testing = getAliasFromPref(shared_testing);
+        String alias_ogury_banner_1 = getAdsIdFromPref(shared_ogury_banner_1);
+        String alias_ogury_interstitial_1 = getAdsIdFromPref(shared_ogury_interstitial_1);
 
         PropsAdsManagement.adsMapping.put(alias_banner_1, banner_1);
         PropsAdsManagement.adsMapping.put(alias_interstitial_1, interstitial_1);
@@ -314,6 +324,8 @@ public class PropsAdsManagement extends LinearLayout {
         PropsAdsManagement.adsMapping.put(alias_native_1, native_1);
         PropsAdsManagement.adsMapping.put(alias_rewarded_1, rewarded_1);
         PropsAdsManagement.adsMapping.put(alias_testing, testing);
+        PropsAdsManagement.adsMapping.put(alias_ogury_banner_1, ogury_banner_1);
+        PropsAdsManagement.adsMapping.put(alias_ogury_interstitial_1, ogury_interstitial_1);
 
         PropsAdsManagement.requestAdunitData(context.getPackageName(), context);
 
@@ -426,6 +438,7 @@ public class PropsAdsManagement extends LinearLayout {
                 }
                 if (!nosizes) {
                     oguryBanner.loadAd();
+                    oguryBanner.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                     ads_linearlayout.addView(oguryBanner);
 
                     oguryBanner.setListener(new OguryBannerAdListener() {
