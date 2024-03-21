@@ -12,10 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -32,9 +34,18 @@ import com.google.android.ump.ConsentForm;
 import com.google.android.ump.ConsentInformation;
 import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.UserMessagingPlatform;
+import com.ogury.core.OguryError;
+import com.ogury.ed.OguryBannerAdListener;
+import com.ogury.ed.OguryBannerAdSize;
+import com.ogury.ed.OguryBannerAdView;
+import com.ogury.ed.OguryInterstitialAd;
+import com.ogury.ed.OguryInterstitialAdListener;
+import com.ogury.sdk.Ogury;
 import com.props.adsmanager.Models.PropsAdsManagementModels;
 import com.props.adsmanager.connection.API;
 import com.props.adsmanager.connection.PROPS_REST_API;
+import com.startapp.sdk.ads.banner.Mrec;
+import com.startapp.sdk.adsbase.StartAppAd;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -52,12 +63,15 @@ public class PropsAdsManagement extends LinearLayout {
     private String adUnitId = "";
     private String targetedAdUnit;
     public static Map<String, String> adsMapping  = new HashMap<>();
+
+    public static OguryInterstitialAd ointerstitial;
     public static InterstitialAd mInterstitialAd;
     public static RewardedAd mRewardedAd;
     private static boolean isMappingInitialized = false;
     private ConsentInformation consentInformation;
 
     public static void initializeAdmob(Context context) {
+        StartAppAd.disableAutoInterstitial();
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
@@ -196,6 +210,11 @@ public class PropsAdsManagement extends LinearLayout {
         if (getMapping == null || getMapping == "") {
             getMapping = "";
         }
+
+        String oguryMapping = PropsAdsManagement.adsMapping.get("ogury_interstitial_1");
+        PropsAdsManagement.ointerstitial = new OguryInterstitialAd(context, oguryMapping);
+        PropsAdsManagement.ointerstitial.load();
+
         InterstitialAd.load(context, getMapping, adRequest,
             new InterstitialAdLoadCallback() {
                 @Override
@@ -225,11 +244,18 @@ public class PropsAdsManagement extends LinearLayout {
         return mRewardedAd;
     }
 
-    public static void triggerInterstitialAds(Activity activity) {
+    public static void triggerInterstitialAds(Activity activity, Context context) {
         if (mInterstitialAd != null) {
             mInterstitialAd.show(activity);
         } else {
-            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+            Log.d("propsSDK", "The GAM interstitial ad wasn't ready yet or no demand.");
+            Log.d("propsSDK", "Init partner interstitial");
+            if (PropsAdsManagement.ointerstitial != null) {
+                PropsAdsManagement.ointerstitial.show();
+            } else {
+                StartAppAd.showAd(context);
+            }
+
         }
     }
 
@@ -382,18 +408,69 @@ public class PropsAdsManagement extends LinearLayout {
 
         AdRequest adrequest = new AdRequest.Builder().build();
         adView.loadAd(adrequest);
-        return this.ads_linearlayout;
-    }
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                ads_linearlayout.removeView(adView);
+                OguryBannerAdView oguryBanner = new OguryBannerAdView(context);
+                String getOguryMapping = PropsAdsManagement.adsMapping.get("ogury_banner_1");
+                oguryBanner.setAdUnit(getOguryMapping);
+                Boolean nosizes = false;
+                if (sizes.equals("BANNER")) {
+                    oguryBanner.setAdSize(OguryBannerAdSize.SMALL_BANNER_320x50);
+                } else if (sizes.equals("MEDIUM_RECTANGLE")) {
+                    oguryBanner.setAdSize(OguryBannerAdSize.MPU_300x250);
+                }else {
+                    nosizes = true;
+                }
+                if (!nosizes) {
+                    oguryBanner.loadAd();
+                    ads_linearlayout.addView(oguryBanner);
 
-    public LinearLayout createBanner(AdSize adSize, String mapping) {
-        adView = new AdView(this.context);
-        String getMapping = PropsAdsManagement.adsMapping.get(mapping);
-        if (getMapping == null) {
-            getMapping = this.adUnitId;
-        }
-        adView.setAdUnitId(adUnitId);
-        adView.setAdSize(adSize);
-        this.ads_linearlayout.addView(adView);
+                    oguryBanner.setListener(new OguryBannerAdListener() {
+                        @Override
+                        public void onAdLoaded() {
+
+                        }
+
+                        @Override
+                        public void onAdDisplayed() {
+
+                        }
+
+                        @Override
+                        public void onAdClicked() {
+
+                        }
+
+                        @Override
+                        public void onAdClosed() {
+
+                        }
+
+                        @Override
+                        public void onAdError(OguryError oguryError) {
+                            ads_linearlayout.removeView(oguryBanner);
+
+                            if (sizes.equals("MEDIUM_RECTANGLE")) {
+                                Mrec startAppMrec = new Mrec(context);
+                                RelativeLayout.LayoutParams mrecParameters =
+                                        new RelativeLayout.LayoutParams(
+                                                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                                                RelativeLayout.LayoutParams.WRAP_CONTENT);
+                                mrecParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                                mrecParameters.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                                ads_linearlayout.addView(startAppMrec, mrecParameters);
+                            }
+
+                        }
+                    });
+                }
+
+
+            }
+        });
         return this.ads_linearlayout;
     }
 
