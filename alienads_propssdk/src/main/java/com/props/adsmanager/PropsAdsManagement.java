@@ -64,6 +64,7 @@ public class PropsAdsManagement extends LinearLayout {
     private String adUnitId = "";
     private String targetedAdUnit;
     public static Map<String, String> adsMapping  = new HashMap<>();
+    public static Boolean setLogging = false;
 
     public static OguryInterstitialAd ointerstitial;
     public static InterstitialAd mInterstitialAd;
@@ -216,13 +217,23 @@ public class PropsAdsManagement extends LinearLayout {
     public static void loadInterstitialAds(Context context, String mapping, InterstitialAdLoadCallback loadCallback) {
         AdRequest adRequest = new AdRequest.Builder().build();
         String getMapping = PropsAdsManagement.adsMapping.get(mapping);
+
+        if (setLogging) {
+            Log.d("propsSDK", "adx mapping :" + getMapping);
+        }
         if (getMapping == null || getMapping == "") {
             getMapping = "";
         }
 
         String oguryMapping = PropsAdsManagement.adsMapping.get("ogury_interstitial_1");
+        if (oguryMapping == null) {
+            oguryMapping = "";
+        }
         PropsAdsManagement.ointerstitial = new OguryInterstitialAd(context, oguryMapping);
         PropsAdsManagement.ointerstitial.load();
+        if (setLogging) {
+            Log.d("propsSDK", "ogury mapping :" + oguryMapping);
+        }
 
         InterstitialAd.load(context, getMapping, adRequest,
             new InterstitialAdLoadCallback() {
@@ -371,7 +382,7 @@ public class PropsAdsManagement extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        this.ads_linearlayout = (LinearLayout) inflater.inflate(R.layout.props_ads_management, this, false);
+        this.ads_linearlayout = (LinearLayout) inflater.inflate(R.layout.props_ads_management, null, false);
 
         this.ads_linearlayout = this.ads_linearlayout.findViewById(R.id.ads_linearlayout);
 
@@ -433,7 +444,7 @@ public class PropsAdsManagement extends LinearLayout {
         if (this.ads_linearlayout == null) {
             LayoutInflater inflater = (LayoutInflater)
                     context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            this.ads_linearlayout = (LinearLayout) inflater.inflate(R.layout.props_ads_management, this, false);
+            this.ads_linearlayout = (LinearLayout) inflater.inflate(R.layout.props_ads_management, null, false);
 
             this.ads_linearlayout = this.ads_linearlayout.findViewById(R.id.ads_linearlayout);
         }
