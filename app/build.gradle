@@ -52,5 +52,5 @@ dependencies {
     implementation 'com.google.ads.mediation:unity:4.9.2.0'
     implementation 'co.ogury:ogury-sdk:5.+'
     implementation 'co.ogury:ogury-mediation-gam:5.+'
-    implementation("com.google.ads.mediation:pangle:5.8.0.7.0")
+
 }

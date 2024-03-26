@@ -112,19 +112,13 @@
     <dependency>
       <groupId>co.ogury</groupId>
       <artifactId>ogury-sdk</artifactId>
-      <version>5.6.2</version>
+      <version>5.+</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>co.ogury</groupId>
       <artifactId>ogury-mediation-gam</artifactId>
-      <version>5.6.2.0</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.ads.mediation</groupId>
-      <artifactId>pangle</artifactId>
-      <version>5.8.0.7.0</version>
+      <version>5.+</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -134,15 +128,15 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>com.startapp</groupId>
-      <artifactId>inapp-sdk</artifactId>
-      <version>4.+</version>
+      <groupId>com.google.ads.mediation</groupId>
+      <artifactId>pangle</artifactId>
+      <version>5.8.0.9.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>com.startapp</groupId>
-      <artifactId>admob-mediation</artifactId>
-      <version>2.+</version>
+      <groupId>com.google.ads.mediation</groupId>
+      <artifactId>vungle</artifactId>
+      <version>7.1.0.0</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>

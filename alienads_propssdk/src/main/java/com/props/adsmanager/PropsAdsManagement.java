@@ -24,6 +24,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.initialization.AdapterStatus;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
@@ -45,8 +46,6 @@ import com.ogury.sdk.OguryConfiguration;
 import com.props.adsmanager.Models.PropsAdsManagementModels;
 import com.props.adsmanager.connection.API;
 import com.props.adsmanager.connection.PROPS_REST_API;
-import com.startapp.sdk.ads.banner.Mrec;
-import com.startapp.sdk.adsbase.StartAppAd;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -73,10 +72,16 @@ public class PropsAdsManagement extends LinearLayout {
     private ConsentInformation consentInformation;
 
     public static void initializeAdmob(Context context) {
-        StartAppAd.disableAutoInterstitial();
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+                Map<String, AdapterStatus> statusMap = initializationStatus.getAdapterStatusMap();
+                for (String adapterClass : statusMap.keySet()) {
+                    AdapterStatus status = statusMap.get(adapterClass);
+                    Log.d("MyApp", String.format(
+                            "Adapter name: %s, Description: %s, Latency: %d",
+                            adapterClass, status.getDescription(), status.getLatency()));
+                }
             }
         });
     }
@@ -273,7 +278,7 @@ public class PropsAdsManagement extends LinearLayout {
             if (PropsAdsManagement.ointerstitial != null) {
                 PropsAdsManagement.ointerstitial.show();
             } else {
-                StartAppAd.showAd(context);
+//                StartAppAd.showAd(context);
             }
 
         }
@@ -499,14 +504,14 @@ public class PropsAdsManagement extends LinearLayout {
                             ads_linearlayout.removeView(oguryBanner);
 
                             if (sizes.equals("MEDIUM_RECTANGLE")) {
-                                Mrec startAppMrec = new Mrec(context);
-                                RelativeLayout.LayoutParams mrecParameters =
-                                        new RelativeLayout.LayoutParams(
-                                                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                                                RelativeLayout.LayoutParams.WRAP_CONTENT);
-                                mrecParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                                mrecParameters.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                                ads_linearlayout.addView(startAppMrec, mrecParameters);
+//                                Mrec startAppMrec = new Mrec(context);
+//                                RelativeLayout.LayoutParams mrecParameters =
+//                                        new RelativeLayout.LayoutParams(
+//                                                RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                                RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                                mrecParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                                mrecParameters.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+//                                ads_linearlayout.addView(startAppMrec, mrecParameters);
                             }
 
                         }
