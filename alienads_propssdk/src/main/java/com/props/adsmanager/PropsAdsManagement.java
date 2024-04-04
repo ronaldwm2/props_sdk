@@ -276,7 +276,33 @@ public class PropsAdsManagement extends LinearLayout {
             Log.d("propsSDK", "The GAM interstitial ad wasn't ready yet or no demand.");
             Log.d("propsSDK", "Init partner interstitial");
             if (PropsAdsManagement.ointerstitial != null) {
-                PropsAdsManagement.ointerstitial.show();
+                PropsAdsManagement.ointerstitial.setListener(new OguryInterstitialAdListener() {
+                    @Override
+                    public void onAdLoaded() {
+                        PropsAdsManagement.ointerstitial.show();
+                    }
+
+                    @Override
+                    public void onAdDisplayed() {
+
+                    }
+
+                    @Override
+                    public void onAdClicked() {
+
+                    }
+
+                    @Override
+                    public void onAdClosed() {
+
+                    }
+
+                    @Override
+                    public void onAdError(OguryError oguryError) {
+
+                    }
+                });
+
             } else {
 //                StartAppAd.showAd(context);
             }

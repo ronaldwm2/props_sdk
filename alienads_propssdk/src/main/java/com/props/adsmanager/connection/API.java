@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public interface API {
 
-    String BASE_URL = "https://propssdk.props.id";
+    String BASE_URL = "https://alienapi.props.id";
 
     String CACHE = "Cache-Control: max-age=0";
 
