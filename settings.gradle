@@ -8,13 +8,12 @@ pluginManagement {
             url 'https://maven.ogury.co'
         }
         maven {
+            url 'https://artifact.bytedance.com/repository/pangle/'
+        }
+        maven {
             url 'https://android-sdk.is.com/'
         }
-        repositories {
-            maven {
-                url 'https://artifact.bytedance.com/repository/pangle/'
-            }
-        }
+
     }
 }
 dependencyResolutionManagement {
@@ -27,12 +26,10 @@ dependencyResolutionManagement {
             url 'https://maven.ogury.co'
         }
         maven {
-            url 'https://android-sdk.is.com/'
+            url 'https://artifact.bytedance.com/repository/pangle/'
         }
-        repositories {
-            maven {
-                url 'https://artifact.bytedance.com/repository/pangle/'
-            }
+        maven {
+            url 'https://android-sdk.is.com/'
         }
     }
 }
