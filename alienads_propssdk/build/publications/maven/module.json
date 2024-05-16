@@ -26,11 +26,11 @@
         {
           "name": "alienads_propssdk-1.0.6.1.aar",
           "url": "alienads_propssdk-1.0.6.1.aar",
-          "size": 21184,
-          "sha512": "97797d875d7c7cd3da8ff1cc903aa3b225cdab80ee99a697466c933ecfe81c5680ee0dbd6a18706d679b543d09eb74fa220cc417b07c2247e5aa19c11475316b",
-          "sha256": "926fd5f929027971b53fb9dd0258e3c6b409428e293ec53629e9dd61d6c3a8eb",
-          "sha1": "3b79bcd912d3222e8af9992f5c5294ec658a0106",
-          "md5": "0d9d8ed85cd056f52e241701431b24d7"
+          "size": 21182,
+          "sha512": "ea467043db1419b74ca21b4549c597e7fa8d4af62b635c63336e2315a00a218f8fb84c2638da62769d499bb5adeec279d7ff1648adbb8217e02fefdb545eac15",
+          "sha256": "c904b80da1d80a36f5c20bc98adba9a8fd885b4b3380de8d398b7b9cd74a3add",
+          "sha1": "46e21eefb40048038c65e40d4458d9a341c5da6e",
+          "md5": "4ae3f81d25bface2e4cc3cf9b266bad1"
         }
       ]
     },
@@ -61,7 +61,7 @@
           "group": "com.google.android.gms",
           "module": "play-services-ads",
           "version": {
-            "requires": "22.4.0"
+            "requires": "23.0.0"
           }
         },
         {
@@ -162,7 +162,7 @@
           "group": "co.ogury",
           "module": "ogury-sdk",
           "version": {
-            "requires": "5.+"
+            "requires": "5.6.2"
           }
         },
         {
@@ -198,11 +198,11 @@
         {
           "name": "alienads_propssdk-1.0.6.1.aar",
           "url": "alienads_propssdk-1.0.6.1.aar",
-          "size": 21184,
-          "sha512": "97797d875d7c7cd3da8ff1cc903aa3b225cdab80ee99a697466c933ecfe81c5680ee0dbd6a18706d679b543d09eb74fa220cc417b07c2247e5aa19c11475316b",
-          "sha256": "926fd5f929027971b53fb9dd0258e3c6b409428e293ec53629e9dd61d6c3a8eb",
-          "sha1": "3b79bcd912d3222e8af9992f5c5294ec658a0106",
-          "md5": "0d9d8ed85cd056f52e241701431b24d7"
+          "size": 21182,
+          "sha512": "ea467043db1419b74ca21b4549c597e7fa8d4af62b635c63336e2315a00a218f8fb84c2638da62769d499bb5adeec279d7ff1648adbb8217e02fefdb545eac15",
+          "sha256": "c904b80da1d80a36f5c20bc98adba9a8fd885b4b3380de8d398b7b9cd74a3add",
+          "sha1": "46e21eefb40048038c65e40d4458d9a341c5da6e",
+          "md5": "4ae3f81d25bface2e4cc3cf9b266bad1"
         }
       ]
     }

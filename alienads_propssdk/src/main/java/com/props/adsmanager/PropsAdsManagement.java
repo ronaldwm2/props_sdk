@@ -64,7 +64,6 @@ public class PropsAdsManagement extends LinearLayout {
     private String targetedAdUnit;
     public static Map<String, String> adsMapping  = new HashMap<>();
     public static Boolean setLogging = false;
-
     public static OguryInterstitialAd ointerstitial;
     public static InterstitialAd mInterstitialAd;
     public static RewardedAd mRewardedAd;
